@@ -209,8 +209,7 @@ public class AirportControllerIT {
         return mockMvc.perform(post("/api/airports")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(airportRequest))
-            ).andDo(org.springframework.test.web.servlet.result.MockMvcResultHandlers.print()) // <-- Agrega esto para ver el error en consola
-             .andExpect(status().isCreated())
-            .andReturn().getResponse().getContentAsString();
+            ).andExpect(status().isCreated())
+             .andReturn().getResponse().getContentAsString();
     }
 }
